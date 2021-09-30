@@ -19,8 +19,8 @@ const makeEditorGrid = (rows, cells) => {
       const cell = {};
 
       cell.id = i * cells + j;
-      cell.painted = false;
-      cell.color = null;
+      cell.painter = false;
+      cell.color = 'grey';
 
       row.push(cell);
     }
