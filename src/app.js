@@ -7,7 +7,7 @@ import PixelEditor from './Components/PixelEditor';
 export default class App extends React.Component {
   render() {
     return (
-      <Router basename="/freewall">
+      <Router>
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
