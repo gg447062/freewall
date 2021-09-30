@@ -87,3 +87,21 @@ body {
   top: 4px;
   left: 4px;
 }
+
+#map-container {
+  position: absolute;
+  top: 0%;
+  right: 12%;
+  border: 1px solid grey;
+  background-color: white;
+  height: 1002px;
+  width: 1002px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.map-tile {
+  height: 10px;
+  width: 10px;
+  border: 1px solid grey;
+}
