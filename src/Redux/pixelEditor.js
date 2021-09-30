@@ -11,6 +11,7 @@ const initialState = {
 const SELECT_COLOR = 'SELECT_COLOR';
 const PAINT = 'PAINT';
 const TOGGLE = 'TOGGLE';
+const RESET = 'RESET';
 
 // action creators
 
@@ -36,6 +37,12 @@ export const toggleClick = () => {
   };
 };
 
+export const reset = () => {
+  return {
+    type: RESET,
+  };
+};
+
 const editorReducer = (state = initialState, action) => {
   switch (action.type) {
     case PAINT:
@@ -49,6 +56,9 @@ const editorReducer = (state = initialState, action) => {
       return { ...state, grid: newGrid };
     case TOGGLE:
       return { ...state, clicked: !state.clicked };
+    case RESET:
+      state = initialState;
+      return { ...state, grid: initialState.grid };
     default:
       return state;
   }
