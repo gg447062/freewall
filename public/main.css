@@ -52,10 +52,6 @@ body {
 }
 
 #connections-container {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   position: fixed;
   margin: 0 auto;
   right: 25%;
@@ -90,6 +86,7 @@ body {
 
 #map-container {
   position: absolute;
+  z-index: 2;
   top: 0%;
   right: 12%;
   border: 1px solid grey;
@@ -106,8 +103,28 @@ body {
   border: 1px solid grey;
 }
 
-.pixel-cell {
-  height: 50px;
-  width: 50px;
-  border: 1px solid red;
+#editor-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+table {
+  border-spacing: 0;
+  width: 644px;
+  height: 644px;
+}
+
+td {
+  height: 16px;
+  width: 16px;
+  border: 1px dashed rgba(245, 245, 245, 0.598);
+}
+
+.grey {
+  background-color: grey;
+}
+.black {
+  background-color: black;
 }
