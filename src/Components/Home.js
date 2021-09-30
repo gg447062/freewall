@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Map from './Map';
 
 export default class Home extends React.Component {
@@ -68,6 +69,7 @@ export default class Home extends React.Component {
             <div className="connect-b button">🌈 Rainbow</div>
           </div>
         )}
+        <Link to="/editor">Editor</Link>
         <div id="map-small" onClick={this.toggleMap}>
           <div>
             <img id="arrow" src="assets/expand-arrow.png" />

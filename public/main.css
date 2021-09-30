@@ -105,3 +105,9 @@ body {
   width: 10px;
   border: 1px solid grey;
 }
+
+.pixel-cell {
+  height: 50px;
+  width: 50px;
+  border: 1px solid red;
+}

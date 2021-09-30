@@ -1,5 +1,5 @@
 import React from 'react';
-import { mapGrid } from '../grid';
+import { mapGrid } from '../grids';
 
 export default class Map extends React.Component {
   constructor(props) {
