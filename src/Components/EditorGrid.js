@@ -8,11 +8,13 @@ export default class EditorGrid extends React.Component {
   render() {
     const { grid } = this.props;
     return (
-      <div>
-        {grid.map((row, rowIndex) => {
-          <EditorRow row={row} key={rowIndex} />;
-        })}
-      </div>
+      <table>
+        <tbody>
+          {grid.map((row, rowId) => {
+            return <EditorRow row={row} rowId={rowId} key={rowId} />;
+          })}
+        </tbody>
+      </table>
     );
   }
 }

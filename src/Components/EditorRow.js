@@ -6,13 +6,21 @@ export default class EditorRow extends React.Component {
     super(props);
   }
   render() {
-    const { row } = this.props;
+    const { row, rowId } = this.props;
     return (
-      <div>
-        {row.map((cell) => {
-          <EditorCell id={cell.id} key={cell.id} />;
+      <tr>
+        {row.map((cell, cellId) => {
+          return (
+            <EditorCell
+              color={cell.color}
+              rowId={rowId}
+              cellId={cellId}
+              id={cell.id}
+              key={cell.id}
+            />
+          );
         })}
-      </div>
+      </tr>
     );
   }
 }

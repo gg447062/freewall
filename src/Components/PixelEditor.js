@@ -1,14 +1,26 @@
 import React from 'react';
 import EditorGrid from './EditorGrid';
-import { pixelGrid } from '../grids';
+import { connect } from 'react-redux';
 
-export default class PixelEditor extends React.Component {
+class PixelEditor extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
+    const { grid } = this.props.editor;
     return (
-      <div>
-        <EditorGrid grid={pixelGrid} />
+      <div id="editor-container">
+        <EditorGrid grid={grid} />
         <div>Color Picker</div>
       </div>
     );
   }
 }
+
+const mapState = (state) => {
+  return {
+    editor: state.editor,
+  };
+};
+
+export default connect(mapState, null)(PixelEditor);
