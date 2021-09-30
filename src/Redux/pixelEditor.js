@@ -10,7 +10,7 @@ const initialState = {
 
 const SELECT_COLOR = 'SELECT_COLOR';
 const PAINT = 'PAINT';
-const CLICK = 'CLICK';
+const TOGGLE = 'TOGGLE';
 
 // action creators
 
@@ -32,7 +32,7 @@ export const paintPixels = (id, row, cell) => {
 
 export const toggleClick = () => {
   return {
-    type: CLICK,
+    type: TOGGLE,
   };
 };
 
@@ -47,6 +47,8 @@ const editorReducer = (state = initialState, action) => {
         color: state.color,
       };
       return { ...state, grid: newGrid };
+    case TOGGLE:
+      return { ...state, clicked: !state.clicked };
     default:
       return state;
   }
