@@ -69,7 +69,9 @@ export default class Home extends React.Component {
             <div className="connect-b button">🌈 Rainbow</div>
           </div>
         )}
-        <Link to="/editor">Editor</Link>
+        <Link className="button" id="editor-link" to="/editor">
+          Editor
+        </Link>
         <div id="map-small" onClick={this.toggleMap}>
           <div>
             <img id="arrow" src="assets/expand-arrow.png" />
