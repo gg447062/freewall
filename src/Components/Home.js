@@ -1,4 +1,5 @@
 import React from 'react';
+import Map from './Map';
 
 export default class Home extends React.Component {
   constructor() {
@@ -6,8 +7,10 @@ export default class Home extends React.Component {
 
     this.state = {
       hideConnections: true,
+      hideMap: true,
     };
     this.connect = this.connect.bind(this);
+    this.toggleMap = this.toggleMap.bind(this);
   }
 
   connect() {
@@ -16,8 +19,21 @@ export default class Home extends React.Component {
     });
   }
 
+  toggleMap() {
+    const { hideMap } = this.state;
+    if (hideMap) {
+      this.setState({
+        hideMap: false,
+      });
+    } else {
+      this.setState({
+        hideMap: true,
+      });
+    }
+  }
+
   render() {
-    const { hideConnections } = this.state;
+    const { hideConnections, hideMap } = this.state;
 
     return (
       <div>
@@ -52,12 +68,13 @@ export default class Home extends React.Component {
             <div className="connect-b button">🌈 Rainbow</div>
           </div>
         )}
-        <div id="map-small">
+        <div id="map-small" onClick={this.toggleMap}>
           <div>
             <img id="arrow" src="assets/expand-arrow.png" />
           </div>
           Map
         </div>
+        {!hideMap ? <Map hideMap={this.toggleMap} /> : <div />}
       </div>
     );
   }
