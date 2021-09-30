@@ -54,6 +54,8 @@ const editorReducer = (state = initialState, action) => {
         color: state.color,
       };
       return { ...state, grid: newGrid };
+    case SELECT_COLOR:
+      return { ...state, color: action.color };
     case TOGGLE:
       return { ...state, clicked: !state.clicked };
     case RESET:

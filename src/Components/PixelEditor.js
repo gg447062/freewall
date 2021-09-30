@@ -2,6 +2,7 @@ import React from 'react';
 import EditorGrid from './EditorGrid';
 import { connect } from 'react-redux';
 import { reset } from '../Redux/pixelEditor';
+import ColorPicker from './ColorPicker';
 
 class PixelEditor extends React.Component {
   constructor(props) {
@@ -20,8 +21,10 @@ class PixelEditor extends React.Component {
       <div id="editor-container">
         <EditorGrid grid={grid} />
         <div id="editor-controls">
-          <div>Color Picker</div>
-          <div onClick={this.reset}>Reset</div>
+          <ColorPicker />
+          <button onClick={this.reset} id="reset-button">
+            Reset
+          </button>
         </div>
       </div>
     );

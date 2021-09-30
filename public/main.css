@@ -110,6 +110,37 @@ body {
   height: 100vh;
 }
 
+#editor-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+}
+
+#reset-button {
+  margin-top: 10px;
+  background-color: grey;
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+#swatch-container {
+  border: 1px solid black;
+  background-color: grey;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.swatch {
+  height: 60px;
+  width: 60px;
+}
+
 table {
   border-spacing: 0;
   width: 644px;
@@ -127,4 +158,28 @@ td {
 }
 .black {
   background-color: black;
+}
+.white {
+  background-color: white;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.blue {
+  background-color: blue;
+}
+.orange {
+  background-color: orange;
+}
+.green {
+  background-color: green;
+}
+.purple {
+  background-color: purple;
+}
+.pink {
+  background-color: pink;
 }
