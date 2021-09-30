@@ -5,11 +5,7 @@ import App from './app';
 import store from './store';
 
 ReactDOM.render(
-<<<<<<< HEAD
-  <Router basename="/freewall">
-=======
   <Provider store={store}>
->>>>>>> main
     <App />
   </Provider>,
   document.getElementById('app')
