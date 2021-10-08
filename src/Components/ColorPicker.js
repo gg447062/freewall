@@ -11,15 +11,18 @@ const colorList = [
   { name: 'green' },
   { name: 'purple' },
   { name: 'pink' },
+  { name: 'grey' },
 ];
 
 export default class ColorPicker extends React.Component {
   render() {
     return (
-      <div id="swatch-container">
-        {colorList.map((color) => {
-          return <ColorSwatch key={color.name} color={color.name} />;
-        })}
+      <div id="color-picker">
+        <div id="swatch-container">
+          {colorList.map((color) => {
+            return <ColorSwatch key={color.name} color={color.name} />;
+          })}
+        </div>
       </div>
     );
   }
