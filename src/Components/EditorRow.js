@@ -15,8 +15,7 @@ export default class EditorRow extends React.Component {
               color={cell.color}
               rowId={rowId}
               cellId={cellId}
-              id={cell.id}
-              key={cell.id}
+              key={cellId}
             />
           );
         })}

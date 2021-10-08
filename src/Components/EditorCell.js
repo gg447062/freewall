@@ -6,22 +6,15 @@ class EditorCell extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
     this.handleMouseDown = this.handleMouseDown.bind(this);
     this.handleMouseUp = this.handleMouseUp.bind(this);
     this.handleDrag = this.handleDrag.bind(this);
   }
 
-  handleClick(e) {
-    e.preventDefault();
-    const { id, cellId, rowId } = this.props;
-    this.props.paint(id, rowId, cellId);
-  }
-
   handleMouseDown() {
-    const { id, cellId, rowId } = this.props;
+    const { cellId, rowId } = this.props;
     this.props.toggle();
-    this.props.paint(id, rowId, cellId);
+    this.props.paint(rowId, cellId);
   }
 
   handleMouseUp() {
@@ -31,8 +24,8 @@ class EditorCell extends React.Component {
   handleDrag() {
     const { clicked } = this.props.editor;
     if (clicked) {
-      const { id, cellId, rowId } = this.props;
-      this.props.paint(id, rowId, cellId);
+      const { cellId, rowId } = this.props;
+      this.props.paint(rowId, cellId);
     }
   }
 
@@ -42,7 +35,6 @@ class EditorCell extends React.Component {
     return (
       <td
         className={color}
-        onClick={this.handleClick}
         onMouseDown={this.handleMouseDown}
         onMouseUp={this.handleMouseUp}
         onMouseEnter={this.handleDrag}
@@ -59,7 +51,7 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    paint: (id, rowId, cellId) => dispatch(paintPixels(id, rowId, cellId)),
+    paint: (rowId, cellId) => dispatch(paintPixels(rowId, cellId)),
     toggle: () => dispatch(toggleClick()),
   };
 };
