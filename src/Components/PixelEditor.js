@@ -3,6 +3,7 @@ import EditorGrid from './EditorGrid';
 import { connect } from 'react-redux';
 import { reset } from '../Redux/pixelEditor';
 import ColorPicker from './ColorPicker';
+import { Toolbar } from './Toolbar';
 
 class PixelEditor extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class PixelEditor extends React.Component {
     const { grid } = this.props.editor;
     return (
       <div id="editor-container">
+        <Toolbar />
         <EditorGrid grid={grid} />
         <div id="editor-controls">
           <ColorPicker />
